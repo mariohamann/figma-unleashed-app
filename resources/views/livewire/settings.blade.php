@@ -45,7 +45,7 @@ new class extends Component {
 };
 ?>
 
-<div wire:poll.100ms>
+<div wire:poll.1000ms>
     <div class="flex items-center justify-between">
         <div>
             <h1 class="text-2xl font-bold">Settings</h1>
@@ -56,16 +56,14 @@ new class extends Component {
         <div class="flex items-center justify-between">
             <div>
                 <h2 class="text-lg font-bold">Clicks</h2>
-                <p class="text-gray-500">Total clicks on the button.</p>
             </div>
             <div>
-                <button wire:click="incrementClicks" class="px-4 py-2 bg-blue-500 text-white rounded">Increment</button>
-                <span class="ml-2">{{ $clicks }}</span>
+                <button wire:click="incrementClicks" class="px-4 py-2 bg-blue-500 text-white rounded">Clicks:
+                    {{ $clicks }}</button>
             </div>
 
             <div>
-                <h2 class="text-lg font-bold">Is Active</h2>
-                <p class="text-gray-500">Toggle the button.</p>
+                <h2 class="text-lg font-bold">Toggle</h2>
 
                 <button wire:click="toggleIsActive"
                     class="px-4 py-2 bg-blue-500 text-white rounded">{{ $is_active ? 'Disable' : 'Enable' }}</button>
